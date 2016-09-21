@@ -5,7 +5,11 @@ var element = document.getElementById('main-text');
 //element.innerHTML="New value";
 
 var img=document.getElementById('me');
-
+var marginLeft = 0;
+function moveRight () {
+    marginLeft = marginLeft + 10;
+    img.style.marginLeft = marginLeft+'px';
+}
 img.onclick=function () {
-   img.style.marginLeft = 200+'px';
+   var interval = setInterval(moveRight,100);
 };
