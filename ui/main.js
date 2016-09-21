@@ -7,5 +7,5 @@ var element = document.getElementById('main-text');
 var img=document.getElementById('me');
 
 img.onclick=function () {
-   
+   img.style.marginLeft = '100px';
 };
