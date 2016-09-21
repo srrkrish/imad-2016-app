@@ -23,7 +23,7 @@ var articles ={
 		`
 		},
 
-	'article-two':{
+	'article-two': {
 		title: 'Article Two | Radhakrishnan',
 		heading: 'Article Two',
 		date: 'Sep 10, 2016',
@@ -103,8 +103,8 @@ app.get('/ui/myphoto.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'myphoto.jpg'));
 });
 
-app.get('/ui/abtglif.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'abtglif.html'));
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 app.get('/:articleName', function (req, res) {
