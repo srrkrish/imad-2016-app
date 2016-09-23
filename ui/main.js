@@ -53,7 +53,5 @@ submit.onclick = function () {
 	request.open('GET','http://srrkrish.imad.hasura-app.io/submit-name?name=' + name,true);
 //	request.open('GET','http://localhost:8080/submit-name?name=' + name,true);
 	request.send(null);
-	
-	var names = ['name1', 'name2', 'name3', 'name4'];
 };
 
