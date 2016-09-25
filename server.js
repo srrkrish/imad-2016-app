@@ -9,11 +9,14 @@ var articles ={
    'article-one': {
 		title: 'Article One | Radhakrishnan',
 		heading: 'Article one',
-		date: 'Sep 5, 2016',
+		date: 'Sep 25, 2016',
 		content: `
-		<h1>Personal</h1>
-		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>
-		<h1>Professional</h1>
+		<h1>Personal</h1>`,
+		content1:`
+		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>`,
+		content2:`
+		<h1>Professional</h1>`,
+		content3:`
 		<p>Retired from State Bank of Travancore, worked in the following Branch/Departments recent past</p>
 		<ol>
 		<li>Akkulam Branch as Branch Manager</li>
@@ -21,33 +24,6 @@ var articles ={
         <li> Head office, CDC, Belapur , as Chief Manager</li>
 		</ol>
 		`
-		},
-
-	'article-two': {
-		title: 'Article Two | Radhakrishnan',
-		heading: 'Article Two',
-		date: 'Sep 10, 2016',
-		content: `
-			<div class="center">
-           <img src="/ui/myphoto.jpg" class="img-medium"/>
-			</div>
-		<h1>Personal</h1>
-		<p>I am Radhakrishnan, retired Bank officer, married with Vasanthi on 27/05/1982</p>
-		<h1>Professional</h1>
-		<p>Retired from State Bank of Travancore </p>
-		`
-	},
-
-	'article-three': {
-		title: 'Article Three | Radhakrishnan',
-		heading: 'Article Three',
-		date: 'Sep 15, 2016',
-		content: `
-		<h1>Personal</h1>
-		<p>I am Radhakrishnan, retired Bank officer</p>
-		<h1>Professional</h1>
-		<p>Retired from State Bank of Travancore, worked in the various Branch/Departments recent past</p>
-	`
 	}
 };
 
@@ -56,7 +32,10 @@ function createTemplate (data) {
    var date = data.date;
    var heading = data.heading;
    var content = data.content;
-
+   var content1 = data.content1;
+   var content2 = data.content2;
+   var content3 = data.content3;
+   
    var htmlTemplate = `
    <html>
      <head>
@@ -67,24 +46,33 @@ function createTemplate (data) {
         <link href="ui/style.css" rel="stylesheet" />
      </head>
      <body>
-        <div class="container">
-           <div>
-	      <a href="/">Home</a>
+     <div class="container">
+        <div>
+			<a href="/">Home</a>
 	   </div>
 	   <hr/>
 	   <h3>
-        <div>
+        <div class="container5">
    	      ${heading}
 	   </div>
 	   </h3>
-	   <div>
+	   <div class="container2">
 	      ${date}
 	   </div>
-	   <div>
+	   <div class="container5">
 	      ${content}
 	   </div>
-        </div>
-      </body>
+	   <div class="container1">
+	      ${content1}
+	   </div>
+	   <div class="container5">
+	      ${content2}
+	   </div>
+	   <div class="container3">
+	      ${content3}
+	   </div>	   
+    </div>
+    </body>
    </html>
    `;
    return htmlTemplate;
