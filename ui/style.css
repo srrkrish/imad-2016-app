@@ -22,7 +22,7 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    color: 990000;
+    color: #990000;
     font-family: sans-serif;
     padding-left: 20px;
     padding-right: 20px;
@@ -31,7 +31,7 @@ body {
 .container1 {
     max-width: 800px;
     margin: 0 auto;
-    color: 000099;
+    color: #000099;
     font-family: Verdana;
     padding-left: 20px;
     padding-right: 20px;
