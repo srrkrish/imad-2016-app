@@ -124,6 +124,10 @@ app.get('/ui/rose1.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'rose1.jpg'));
 });
 
+app.get('/ui/nice.gif', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'nice.gif'));
+});
+
 app.get('/ui/rose2.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'rose2.jpg'));
 });
