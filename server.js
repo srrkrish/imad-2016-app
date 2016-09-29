@@ -51,6 +51,14 @@ function createTemplate (data) {
 			<a href="/">Home</a>
 	   </div>
 	   <hr/>
+		<TABLE height=40 cellSpacing=0 cellPadding=0 width="100%" border=0 style="border-collapse: collapse" bordercolor="#111111">
+		<TBODY>
+		<TR>
+		<TD width=100 height=40>
+		<P align=center>&nbsp; 
+		<IMG id="me" src="/ui/myphoto.jpg" width="203" height="210"></P></TD>
+		<TD width=355 height=40>
+		<P align=center>&nbsp; 	   	   
 	   <h3>
         <div class="container5">
    	      ${heading}
@@ -70,7 +78,8 @@ function createTemplate (data) {
 	   </div>
 	   <div class="container3">
 	      ${content3}
-	   </div>	   
+	   </div>	
+		</TD></TR></TBODY></TABLE>	   
     </div>
     </body>
    </html>
