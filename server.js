@@ -41,9 +41,6 @@ function createTemplate (data) {
    var date = data.date;
    var heading = data.heading;
    var content = data.content;
-   var content1 = data.content1;
-   var content2 = data.content2;
-   var content3 = data.content3;
    
    var htmlTemplate = `
    <html>
@@ -79,15 +76,6 @@ function createTemplate (data) {
 	   <div class="container5">
 	      ${content}
 	   </div>
-	   <div class="container1">
-	      ${content1}
-	   </div>
-	   <div class="container5">
-	      ${content2}
-	   </div>
-	   <div class="container3">
-	      ${content3}
-	   </div>	
 		</TD></TR></TBODY></TABLE>	   
     </div>
     </body>
