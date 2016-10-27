@@ -20,12 +20,9 @@ var articles ={
 		heading: 'Article one',
 		date: 'Sep 25, 2016',
 		content: `
-		<h1>Personal</h1>`,
-		content1:`
-		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>`,
-		content2:`
-		<h1>Professional</h1>`,
-		content3:`
+		<h1>Personal</h1>,
+		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>,
+		<h1>Professional</h1>,
 		<p>Retired from State Bank of Travancore, worked in the following Branch/Departments recent past</p>
 		<ol>
 		<li>Akkulam Branch as Branch Manager</li>
