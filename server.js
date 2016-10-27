@@ -1,16 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool = require('pg').Pool;
 
-var config = {
-    user: 'srrkrish',
-    database: 'srrkrish',
-    host: 'db.imad.hasura-app.io',
-    port: '5432',
-    password: process.env.DB_PASSWORD
-};
-    
 var app = express();
 app.use(morgan('combined'));
 
@@ -41,6 +32,9 @@ function createTemplate (data) {
    var date = data.date;
    var heading = data.heading;
    var content = data.content;
+   var content1 = data.content1;
+   var content2 = data.content2;
+   var content3 = data.content3;
    
    var htmlTemplate = `
    <html>
@@ -57,14 +51,6 @@ function createTemplate (data) {
 			<a href="/">Home</a>
 	   </div>
 	   <hr/>
-		<TABLE height=40 cellSpacing=0 cellPadding=0 width="100%" border=0 style="border-collapse: collapse" bordercolor="#111111">
-		<TBODY>
-		<TR>
-		<TD width=100 height=40>
-		<P align=center>&nbsp; 
-		<IMG id="me" src="/ui/myphoto.jpg" width="203" height="210"></P></TD>
-		<TD width=355 height=40>
-		<P align=center>&nbsp; 	   	   
 	   <h3>
         <div class="container5">
    	      ${heading}
@@ -76,7 +62,15 @@ function createTemplate (data) {
 	   <div class="container5">
 	      ${content}
 	   </div>
-		</TD></TR></TBODY></TABLE>	   
+	   <div class="container1">
+	      ${content1}
+	   </div>
+	   <div class="container5">
+	      ${content2}
+	   </div>
+	   <div class="container3">
+	      ${content3}
+	   </div>	   
     </div>
     </body>
    </html>
@@ -86,17 +80,6 @@ function createTemplate (data) {
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
-var pool = new Pool(config);
-app.get('/test-db', function (req, res) {
-    pool.query('SELECT * FROM test', function (err, result) {
-       if (err) {
-           res.status(500).send(err.toString());
-       } else {
-	       res.send(JSON.stringify(result.rows));
-       }
-    });
 });
 
 var counter = 0;
@@ -116,7 +99,6 @@ app.get('/:articleName', function (req, res) {
 	var articleName = req.params.articleName;
 	res.send(createTemplate(articles[articleName]));
 });
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -131,10 +113,6 @@ app.get('/ui/myphoto.jpg', function (req, res) {
 
 app.get('/ui/rose1.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'rose1.jpg'));
-});
-
-app.get('/ui/nice.gif', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'nice.gif'));
 });
 
 app.get('/ui/rose2.jpg', function (req, res) {
