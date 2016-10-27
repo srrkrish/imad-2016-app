@@ -14,25 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles ={
-   'article-one': {
-		title: 'Article One | Radhakrishnan',
-		heading: 'Article one',
-		date: 'Sep 25, 2016',
-		content: `
-		<h1>Personal</h1>,
-		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>,
-		<h1>Professional</h1>,
-		<p>Retired from State Bank of Travancore, worked in the following Branch/Departments recent past</p>
-		<ol>
-		<li>Akkulam Branch as Branch Manager</li>
-		<li> Head office, KYC Cell, as Chief Manager</li>
-        <li> Head office, CDC, Belapur , as Chief Manager</li>
-		</ol>
-		`
-	}
-};
-
 function createTemplate (data) {
    var title = data.title;
    var date = data.date;
@@ -104,7 +85,7 @@ app.get('/submit-name', function (req, res) {
 });
 
 app.get('/articles/:articleName', function (req, res) {
-        pool.query("SELECT * FROM article where title=$1", [req.params.articleName], function (err, result) {
+        pool.query("SELECT * FROM article where title = $1", [req.params.articleName], function (err, result) {
         if (err){ 
            res.status(500).send(err.toString());
         } else {
