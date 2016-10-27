@@ -71,15 +71,6 @@ function createTemplate (data) {
 	   <div class="container5">
 	      ${content}
 	   </div>
-	   <div class="container1">
-	      ${content1}
-	   </div>
-	   <div class="container5">
-	      ${content2}
-	   </div>
-	   <div class="container3">
-	      ${content3}
-	   </div>	   
     </div>
     </body>
    </html>
