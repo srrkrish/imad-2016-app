@@ -14,28 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles ={
-   'article-one': {
-		title: 'Article One | Radhakrishnan',
-		heading: 'Article one',
-		date: 'Sep 25, 2016',
-		content: `
-		<h1>Personal</h1>`,
-		content1:`
-		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>`,
-		content2:`
-		<h1>Professional</h1>`,
-		content3:`
-		<p>Retired from State Bank of Travancore, worked in the following Branch/Departments recent past</p>
-		<ol>
-		<li>Akkulam Branch as Branch Manager</li>
-		<li> Head office, KYC Cell, as Chief Manager</li>
-        <li> Head office, CDC, Belapur , as Chief Manager</li>
-		</ol>
-		`
-	}
-};
-
 function createTemplate (data) {
    var title = data.title;
    var date = data.date;
