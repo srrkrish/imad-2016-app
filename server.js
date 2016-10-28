@@ -6,35 +6,13 @@ var Pool = require('pg').Pool;
 var config = {
     user: 'srrkrish',
     database: 'srrkrish',
-    host: 'localhost',
+    host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
 }
 
 var app = express();
 app.use(morgan('combined'));
-
-var articles ={
-   'article-one': {
-		title: 'Article One | Radhakrishnan',
-		heading: 'Article one',
-		date: 'Sep 25, 2016',
-		content: `
-		<h1>Personal</h1>`,
-		content1:`
-		<p>I am Radhakrishnan, retired Bank officer, interested in studying computer languages</p>`,
-		content2:`
-		<h1>Professional</h1>`,
-		content3:`
-		<p>Retired from State Bank of Travancore, worked in the following Branch/Departments recent past</p>
-		<ol>
-		<li>Akkulam Branch as Branch Manager</li>
-		<li> Head office, KYC Cell, as Chief Manager</li>
-        <li> Head office, CDC, Belapur , as Chief Manager</li>
-		</ol>
-		`
-	}
-};
 
 function createTemplate (data) {
    var title = data.title;
@@ -66,20 +44,11 @@ function createTemplate (data) {
 	   </div>
 	   </h3>
 	   <div class="container2">
-	      ${date}
+	      ${date.toDateString()}
 	   </div>
 	   <div class="container5">
 	      ${content}
 	   </div>
-	   <div class="container1">
-	      ${content1}
-	   </div>
-	   <div class="container5">
-	      ${content2}
-	   </div>
-	   <div class="container3">
-	      ${content3}
-	   </div>	   
     </div>
     </body>
    </html>
@@ -93,7 +62,7 @@ app.get('/', function (req, res) {
 
 var pool = new Pool(config);
 app.get('/test-db', function (req, res){
-    pool.query('SELECT * FROM test', function (err, result) {
+    pool.query('SELECT * FROM article', function (err, result) {
        if (err){ 
            res.status(500).send(err.toString());
        } else {
@@ -115,10 +84,21 @@ app.get('/submit-name', function (req, res) {
 	res.send(JSON.stringify(names));
 });
 
-app.get('/:articleName', function (req, res) {
-	var articleName = req.params.articleName;
-	res.send(createTemplate(articles[articleName]));
+app.get('/articles/:articleName', function (req, res) {
+        pool.query("SELECT * FROM article where title = 'article-one'",  function (err, result) {
+        if (err){ 
+           res.status(500).send(err.toString());
+        } else {
+          if (result.rows.length === 0){
+              res.status(404).send('Article Not found');
+          } else {
+              var articleData=result.rows[0];
+              res.send(createTemplate(articleData));
+          }
+          }
+        });
 });
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
