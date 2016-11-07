@@ -1,6 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var enfig = require('enfig');
+var env = require('env2')('config.env');
 var Pool = require('pg').Pool;
 
 var config = {
