@@ -2,47 +2,29 @@
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
-	</head>
-	<body leftMargin="0" topMargin="0" rightMargin="0" marginheight="0" marginwidth="0">
-		<TABLE height=40 cellSpacing=0 cellPadding=0 width="100%" border=0 style="border-collapse: collapse" bordercolor="#111111">
-		<TBODY>
-		<TR>
-		<TD width=255 height=40>
-		<P align=center>&nbsp; 
-		<IMG src="/ui/rose2.jpg" width="203" height="210"></P></TD>
-		<TD width=283 height=40>
-		<P align=center>&nbsp; 
-		<IMG id="me" src="/ui/myphoto.jpg" width="203" height="210"></P></TD>
-		<TD width=255 height=40>
-		<P align=center>&nbsp; 
-		<IMG src="/ui/nice.gif" width="203" height="210"></P></TD>
-		</TR></TBODY></TABLE>
-		<hr/>
-        <div align = "center" class="stext1">
-			<h3>Personal</h3>
-		</div>
-        <div align = "center" class="stext">
-            <h3>Hi My name is S R Radhakrishnan</h3>
+    </head>
+    <body>
+        <div class="container">
+            <div class="center">
+                <img id='madi' src="ui/myphoto.jpg" class="img-medium"/>
+            </div>
+            <h3>About Me</h3>
+            <div>
+                Hi. My name is S R Radhakrishnan<br/>
+                I am a retired Bank officer
+            </div>
+            <hr/>
+            <div id="login_area">
+                <center>Loading login status...</center>
+            </div>
+            <hr/>
+            <h3>My Articles</h3>
+            <div id="articles">
+                <center>Loading articles...</center>
+            </div>
+            <div class="footer">
+            </div>
         </div>
-		<hr/>
-        <div align = "center" class="stext2">
-			<h3>Professional</h3>
-		</div>
-        <div align = "center" class="stext3">
-	    click here for
-		<a href="articles/article-one"><strong>Professional Summary</strong></a>
-        </div>
-		<hr/>
-        <div align = "center" class="footer stext4">
-			This button <button id="counter">Click me!</button> has been clicked <span id="count">0</span> times.
-	    </div>
-		<hr/>
-		<div align = "center" class="footer stext5">
-			<input type="text" id="name" placeholder="name"></input>
-			<input type="submit" value="Submit" id="submit_btn"></input>
-			<ul id="namelist">
-			</ul>
-		</div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>

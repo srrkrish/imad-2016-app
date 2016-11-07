@@ -22,90 +22,25 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    color: #990000;
+    color: #4a4a4a;
     font-family: sans-serif;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.container1 {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #000099;
-    font-family: Verdana;
-    padding-left: 20px;
-    padding-right: 20px;
+.comment {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
-.container2 {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #483D8B;
-    font-family: Verdana;
-    padding-left: 20px;
-    padding-right: 20px;
+.commenter {
+    font-style: italic;
+    font-size: 0.8em;
 }
 
-.container3 {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #008000;
-    font-family: Helvetica;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.container4 {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #4B0082;
-    font-family: Arial;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.container5 {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #B22222;
-    font-family: sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.stext {
-    FONT-SIZE: 10pt; 
-    COLOR: #8B0000; 
-    FONT-FAMILY: verdana,arial,san-serif; 
-    TEXT-DECORATION: none
-}
-.stext1 {
-    FONT-SIZE: 14pt; 
-    COLOR: #00008B; 
-    FONT-FAMILY: verdana,arial,san-serif; 
-    TEXT-DECORATION: none
-}
-.stext2 {
-    FONT-SIZE: 14pt; 
-    COLOR: #0000CD; 
-    FONT-FAMILY: verdana,arial,san-serif; 
-    TEXT-DECORATION: none
-}
-.stext3 {
-    FONT-SIZE: 12pt; 
-    COLOR: #800000; 
-    FONT-FAMILY: verdana,arial,san-serif; 
-    TEXT-DECORATION: none
-}
-.stext4 {
-    FONT-SIZE: 12pt; 
-    COLOR: #FF0000; 
-    FONT-FAMILY: verdana,arial,san-serif; 
-    TEXT-DECORATION: none
-}
-.stext5 {
-    FONT-SIZE: 10pt; 
-    COLOR: #663399; 
-    FONT-FAMILY: verdana,arial,san-serif; 
-    TEXT-DECORATION: none
+#comment_form {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
